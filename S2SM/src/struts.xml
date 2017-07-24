@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<!-- 指定默认编码集 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<!-- 指定需要Struts2处理的请求后缀 -->
+	<constant name="struts.action.extension" value="do,action"></constant>
+	<constant name="struts.objectFactory.spring.autoWire" value="type"></constant>
+	
+	<package name="konan" extends="struts-default" namespace="/">
+		<action name="login" class="com.s2sm.konan.action.LoginAction" method="doLogin">
+			<result name="yes">success.jsp</result>
+			<result name="no">fail.jsp</result>
+		</action>
+		
+		<action name="jump" class="com.s2sm.konan.action.UserAction" method="jump">
+			<result name="main">/WEB-INF/index.jsp</result>
+		</action>
+		
+		<action name="regist" class="com.s2sm.konan.action.UserAction" method="updateUserList">
+			<result name="success">success.jsp</result>
+		</action>
+		
+		<action name="upload" class="com.s2sm.konan.action.FileUploadAction">
+			<result name="success">1.jsp</result>
+		</action>
+	</package>	
+</struts>

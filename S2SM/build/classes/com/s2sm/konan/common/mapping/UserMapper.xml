@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.s2sm.konan.common.mapper.UserMapper">
+	<select id="LoginTest" resultType="com.s2sm.konan.common.entity.UserList">
+		select id,name,password from userlist where name=#{0,jdbcType=VARCHAR} and password=#{1,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="updateUserList" parameterType="com.s2sm.konan.common.entity.UserList">
+		insert userlist(name,password, question, answer) 
+		values 
+		(
+		#{name,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR},
+		#{question,jdbcType=VARCHAR},
+		#{answer,jdbcType=VARCHAR}
+		)
+	</select>
+
+</mapper>
