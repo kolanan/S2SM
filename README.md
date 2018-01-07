@@ -1,2 +1,2 @@
 # S2SMDemo
-Struts2+Spring+Mybatis框架并实现了简单登陆和文件上页跳转功后面会不断完善
+Struts2+Spring+Mybatis框架并实现了简单登陆和文件上传
